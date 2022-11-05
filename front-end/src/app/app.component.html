@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <span>Loymark</span>
+  <span class="spacer"></span>
+  <button mat-icon-button class="icon favorite-icon" routerLink="/actividad">
+    <mat-icon>list</mat-icon>
+  </button>
+  <button mat-icon-button class="icon" (click)="this.newUser()">
+    <mat-icon>person_add</mat-icon>
+  </button>
+  <button mat-icon-button class="icon" routerLink="/usuario">
+    <mat-icon>manage_accounts</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

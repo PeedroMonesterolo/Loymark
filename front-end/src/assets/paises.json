@@ -1,0 +1,29 @@
+[
+    {
+        "pais": "Costa Rica",
+        "value": "CRI"
+    },
+    {
+        "pais": "Argentina",
+        "value": "ARG"
+    },
+    {
+        "pais": "Brasil",
+        "value": "BRA"
+    },
+    {
+        "pais": "Estados Unidos",
+        "value": "USA"
+    },
+    {
+        "pais": "Chile",
+        "value": "CHL"
+    },
+    {
+        "pais": "Uruguay",
+        "value": "URY"
+    },    {
+        "pais": "Ecuador",
+        "value": "ECU"
+    }
+]

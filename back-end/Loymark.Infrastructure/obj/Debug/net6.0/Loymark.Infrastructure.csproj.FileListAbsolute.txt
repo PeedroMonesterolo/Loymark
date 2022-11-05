@@ -1,0 +1,17 @@
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Infrastructure.deps.json
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Infrastructure.runtimeconfig.json
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Infrastructure.dll
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Infrastructure.pdb
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Core.dll
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\bin\Debug\net6.0\Loymark.Core.pdb
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.AssemblyInfo.cs
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.csproj.CopyComplete
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.dll
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\refint\Loymark.Infrastructure.dll
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.pdb
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\Loymark.Infrastructure.genruntimeconfig.cache
+C:\Users\Pedro\Desktop\Loymark\back-end\Loymark.Infrastructure\obj\Debug\net6.0\ref\Loymark.Infrastructure.dll

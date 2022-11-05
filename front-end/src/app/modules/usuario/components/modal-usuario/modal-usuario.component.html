@@ -1,0 +1,79 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="user" class="row">
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input required type="text" matInput formControlName="nombre" (keypress)="soloLetras($event)">
+        <mat-error ngxErrors="user.nombre">
+          <p ngxError="required">El nombre es requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input required type="text" matInput formControlName="apellido" (keypress)="soloLetras($event)">
+        <mat-error ngxErrors="user.apellido">
+          <p ngxError="required">El apellido es requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Correo electronico</mat-label>
+        <input required type="email" matInput formControlName="email">
+        <mat-error ngxErrors="user.email">
+          <p ngxError="required">El Correo electronico es requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input required matInput formControlName="fechaNacimiento" datePickerFormat="YYYY/MM/DD" [matDatepicker]="picker"
+          (keypress)="soloNumeros($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error ngxErrors="user.fechaNacimiento">
+          <p ngxError="required">La Fecha de nacimiento es requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input type="number" matInput formControlName="telefono" (keydown)="maximaCantidad($event)">
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>País</mat-label>
+        <mat-select required formControlName="codPais">
+          <mat-option *ngFor="let item of this.paises" [value]="item.value">{{ item.pais }}</mat-option>
+        </mat-select>
+        <mat-error ngxErrors="user.codPais">
+          <p ngxError="required">La País es requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Recibir información por Email</mat-label>
+        <mat-select required formControlName="recibirInfo">
+          <mat-option value="true">Si deseo recibir</mat-option>
+          <mat-option value="false">No deseo recibir</mat-option>
+        </mat-select>
+        <mat-error ngxErrors="user.recibirInfo">
+          <p ngxError="required">Campo requerido</p>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="save()" [disabled]="this.user.invalid" cdkFocusInitial>Guardar</button>
+  <button mat-button [mat-dialog-close]="null">Cancelar</button>
+</div>
