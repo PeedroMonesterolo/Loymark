@@ -29,9 +29,13 @@ export class ModalUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = new FormGroup({
-      nombre: new FormControl(this.data.usuario.nombre, [Validators.required]),
+      nombre: new FormControl(this.data.usuario.nombre, [
+        Validators.required,
+        Validators.maxLength(25),
+      ]),
       apellido: new FormControl(this.data.usuario.apellido, [
         Validators.required,
+        Validators.maxLength(35),
       ]),
       email: new FormControl(this.data.usuario.email, [
         Validators.required,
@@ -48,7 +52,7 @@ export class ModalUsuarioComponent implements OnInit {
       ]),
       recibirInfo: new FormControl(
         Boolean(this.data.usuario.recibirInfo).toString(),
-        [Validators.required]
+        [Validators.required, Validators.maxLength(10)]
       ),
     });
   }
@@ -103,9 +107,13 @@ export class ModalUsuarioComponent implements OnInit {
   }
 
   maximaCantidad(event: any) {
+    if (event.code == 'Backspace' || event.code == 'Delete') {
+      return true;
+    }
     if (this.user.controls['telefono'].value === null) {
       return true;
     }
+    console.log(this.user.controls['telefono'].value.toString().length < 10);
     return this.user.controls['telefono'].value.toString().length < 10;
   }
 }

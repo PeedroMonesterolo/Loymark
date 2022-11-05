@@ -30,7 +30,7 @@ export class UsuarioComponent implements OnInit {
   newUser() {
     const dialogRef = this.dialog.open(ModalUsuarioComponent, {
       width: '700px',
-      height: '650px',
+      height: '800px',
       data: {
         title: 'Nuevo Usuario',
         usuario: {

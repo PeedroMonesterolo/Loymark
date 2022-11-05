@@ -58,7 +58,7 @@ export class TableUsuarioComponent implements OnInit {
   editUser(usuario: Usuario) {
     const dialogRef = this.dialog.open(ModalUsuarioComponent, {
       width: '700px',
-      height: '650px',
+      height: '800px',
       data: {
         title: 'Editar Usuario',
         usuario,
