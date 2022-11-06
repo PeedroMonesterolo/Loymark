@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import moment from 'moment';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -14,7 +15,8 @@ export class UsuarioComponent implements OnInit {
   usuariosList: Usuario[] = [];
   constructor(
     private usuarioService: UsuariosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {
     this.getUsuarios();
   }
@@ -47,9 +49,10 @@ export class UsuarioComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.usuarioService.postUsuario(result).subscribe(data => {
+        this.usuarioService.postUsuario(result).subscribe((data) => {
           this.usuarioService.getUsuarios().subscribe();
-        })
+          this.snackBar.open('Usuario creado correctamente.', 'OK');
+        });
       }
     });
   }

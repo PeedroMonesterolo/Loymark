@@ -13,23 +13,22 @@ import { ActividadesService } from 'src/app/services/actividades.service';
 export class TableActividadesComponent implements OnInit {
   @Input() data!: MatTableDataSource<Actividad>;
   displayedColumns: string[] = ['createDate', 'usuario', 'actividad1'];
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
-  // MatPaginator Output
   pageEvent!: PageEvent;
   constructor(private actividadService: ActividadesService) {}
 
   ngOnInit(): void {
     this.actividadService.actividadesListSubject
-    .asObservable()
-    .subscribe((list) => {
-      this.data = new MatTableDataSource(list);
-      this.data.paginator = this.paginator;
-      this.data.sort = this.sort;
-      this.paginator._intl.itemsPerPageLabel = 'Items por pagina:';
-    });
+      .asObservable()
+      .subscribe((list) => {
+        this.data = new MatTableDataSource(list);
+        this.data.paginator = this.paginator;
+        this.data.sort = this.sort;
+      });
+    this.paginator._intl.itemsPerPageLabel = 'Items por pagina:';
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {

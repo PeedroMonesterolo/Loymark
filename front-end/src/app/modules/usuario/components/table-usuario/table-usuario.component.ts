@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -31,7 +32,8 @@ export class TableUsuarioComponent implements OnInit {
   pageEvent!: PageEvent;
   constructor(
     private usuarioService: UsuariosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -39,8 +41,8 @@ export class TableUsuarioComponent implements OnInit {
       this.data = new MatTableDataSource(list);
       this.data.paginator = this.paginator;
       this.data.sort = this.sort;
-      this.paginator._intl.itemsPerPageLabel = 'Items por pagina:';
     });
+    this.paginator._intl.itemsPerPageLabel = 'Items por pagina:';
   }
 
   deleteUser(id: number) {
@@ -71,6 +73,7 @@ export class TableUsuarioComponent implements OnInit {
           .putUsuario(usuario.id!, result)
           .subscribe((data) => {
             this.usuarioService.getUsuarios().subscribe();
+            this.snackBar.open('Usuario actualizado correctamente', 'OK');
           });
       }
     });

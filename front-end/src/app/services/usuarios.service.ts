@@ -13,7 +13,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) {}
 
   getUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`/api/Usuario`).pipe(
+    return this.http.get<Usuario[]>(`${environment.urlApi}/Usuario`).pipe(
       map((data: Usuario[]) => {
         this.usuariosListSubject.next(data);
         return data;
@@ -22,18 +22,24 @@ export class UsuariosService {
   }
 
   getUserioById(id: number): Observable<Usuario> {
-    return this.http.get<Usuario>(`/api/Usuario/${id}`);
+    return this.http.get<Usuario>(`${environment.urlApi}/Usuario/${id}`);
   }
 
   postUsuario(usuario: UserDto): Observable<Usuario> {
-    return this.http.post<Usuario>(`/api/Usuario`, usuario);
+    return this.http.post<Usuario>(
+      `${environment.urlApi}/Usuario`,
+      usuario
+    );
   }
 
   putUsuario(id: number, usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>(`/api/Usuario/${id}`, usuario);
+    return this.http.put<Usuario>(
+      `${environment.urlApi}/Usuario/${id}`,
+      usuario
+    );
   }
 
   deleteUsuario(id: number): Observable<any> {
-    return this.http.delete<any>(`/api/Usuario/${id}`);
+    return this.http.delete<any>(`${environment.urlApi}/Usuario/${id}`);
   }
 }

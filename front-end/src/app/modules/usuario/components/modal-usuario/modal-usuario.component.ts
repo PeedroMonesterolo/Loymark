@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import moment from 'moment';
 import { Pais } from 'src/app/models/paises.model';
 import {
   DialogDataUsuario,
@@ -20,7 +22,8 @@ export class ModalUsuarioComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DialogDataUsuario,
     private paisService: PaisesService,
-    public dialogRef: MatDialogRef<ModalUsuarioComponent>
+    public dialogRef: MatDialogRef<ModalUsuarioComponent>,
+    private snackBar: MatSnackBar
   ) {
     this.paisService.getPaises().subscribe((data) => {
       this.paises = data;
@@ -45,7 +48,10 @@ export class ModalUsuarioComponent implements OnInit {
         this.data.usuario.fechaNacimiento,
         Validators.required
       ),
-      telefono: new FormControl('', [Validators.maxLength(10)]),
+      telefono: new FormControl(this.data.usuario.telefono, [
+        Validators.minLength(10),
+        Validators.maxLength(10),
+      ]),
       codPais: new FormControl(this.data.usuario.codPais, [
         Validators.required,
         Validators.maxLength(3),
@@ -58,6 +64,19 @@ export class ModalUsuarioComponent implements OnInit {
   }
 
   save() {
+    if (
+      !this.user.valid &&
+      !moment(
+        moment(this.user.controls['fechaNacimiento'].value).toDate()
+      ).isValid()
+    ) {
+      this.snackBar.open(
+        'Error en la carga de datos. Verifique los datos cargados.',
+        'OK'
+      );
+      return;
+    }
+
     const value: Usuario = {
       apellido: this.user.controls['apellido'].value,
       codPais: this.user.controls['codPais'].value,

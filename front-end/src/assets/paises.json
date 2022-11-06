@@ -1,29 +1,81 @@
-[
-    {
-        "pais": "Costa Rica",
-        "value": "CRI"
-    },
-    {
-        "pais": "Argentina",
-        "value": "ARG"
-    },
-    {
-        "pais": "Brasil",
-        "value": "BRA"
-    },
-    {
-        "pais": "Estados Unidos",
-        "value": "USA"
-    },
-    {
-        "pais": "Chile",
-        "value": "CHL"
-    },
-    {
-        "pais": "Uruguay",
-        "value": "URY"
-    },    {
-        "pais": "Ecuador",
-        "value": "ECU"
-    }
+[{
+    "pais": "Costa Rica",
+    "value": "CRI"
+  },
+  {
+    "pais": "Argentina",
+    "value": "ARG"
+  },
+  {
+    "pais": "Brasil",
+    "value": "BRA"
+  },
+  {
+    "pais": "Estados Unidos",
+    "value": "USA"
+  },
+  {
+    "pais": "Chile",
+    "value": "CHL"
+  },
+  {
+    "pais": "Uruguay",
+    "value": "URY"
+  },
+  {
+    "pais": "Ecuador",
+    "value": "ECU"
+  },
+  {
+    "pais": "Bolivia",
+    "value": "BOL"
+  },
+  {
+    "pais": "Colombia",
+    "value": "COL"
+  },
+  {
+    "pais": "Cuba",
+    "value": "CUB"
+  },
+  {
+    "pais": "El Salvador",
+    "value": "SLV"
+  },
+  {
+    "pais": "Guatemala",
+    "value": "GTM"
+  },
+  {
+    "pais": "Honduras",
+    "value": "HND"
+  },
+  {
+    "pais": "México",
+    "value": "MEX"
+  },
+  {
+    "pais": "Nicaragua",
+    "value": "NIC"
+  },
+  {
+    "pais": "Panamá",
+    "value": "PAN"
+  },
+  {
+    "pais": "Paraguay",
+    "value": "PRY"
+  },
+  {
+    "pais": "Perú",
+    "value": "PER"
+  },
+  {
+    "pais": "República Dominicana",
+    "value": "DOM"
+  },
+  {
+    "pais": "Venezuela",
+    "value": "VEN"
+  }
 ]

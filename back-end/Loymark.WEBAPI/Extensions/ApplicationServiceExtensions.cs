@@ -12,7 +12,9 @@ namespace WEBAPI.Extensions
                 services.AddCors(options =>
                 {
                     options.AddPolicy("CorsPolicy", builder =>
-                        builder.AllowAnyOrigin()   //WithOrigins("https://dominio.com")
+                        builder
+                        .AllowAnyOrigin()
+                        //.WithOrigins("*")
                         .AllowAnyMethod()          //WithMethods("GET","POST")
                         .AllowAnyHeader());        //WithHeaders("accept","content-type")
                 });
