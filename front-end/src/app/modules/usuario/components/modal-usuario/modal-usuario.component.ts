@@ -129,10 +129,12 @@ export class ModalUsuarioComponent implements OnInit {
     if (event.code == 'Backspace' || event.code == 'Delete') {
       return true;
     }
+    if (event.code == 'Minus') {
+      return false;
+    }
     if (this.user.controls['telefono'].value === null) {
       return true;
     }
-    console.log(this.user.controls['telefono'].value.toString().length < 10);
     return this.user.controls['telefono'].value.toString().length < 10;
   }
 }

@@ -21,8 +21,7 @@ export class AppComponent {
 
   newUser() {
     const dialogRef = this.dialog.open(ModalUsuarioComponent, {
-      width: '700px',
-      height: '800px',
+      maxWidth: '50vw',
       data: {
         title: 'Nuevo Usuario',
         usuario: {
